@@ -20,4 +20,4 @@ describe("Hotel", () => {
       expect(hotel.guests).to.eql([{name}]);
     });
   });
-});
+});``
