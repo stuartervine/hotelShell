@@ -1,5 +1,7 @@
 # Happy Hotel 
 
+To get started, try running `npm run test`. 
+
 ### Hotel Rules: 
 - No extensions can be made to the hotel or its component parts without first implementing a failing test
 - The hotel is not responsible for keeping guest or restaurant data
@@ -8,6 +10,8 @@
 
 #### Checking In 
 - [ ] Confirm a stay for tonight and update the hotel
+- [ ] Don't forget about your first guest when another checks in
+- [ ] Allow multiple guests to check in at once
 - [ ] Don't allow the same guest to check in more than once (throw an error?)
 - [ ] Don't allow a guest to check in if there are no free rooms
 - [ ] BONUS: Consider refactoring your 'checkIn' function 
