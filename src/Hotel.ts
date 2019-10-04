@@ -3,7 +3,7 @@ export class Hotel {
 
   constructor(_rooms: number) {}
 
-  static checkInGuest(guest: { name: string }){
+  public checkInGuest(guest: { name: string }){
     console.log("check in guest here!")
   }
 }
