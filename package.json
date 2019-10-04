@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "test"
+    "test": "mocha --require ts-node/register 'test/*.test.ts'",
+    "start": "ts-node src/main.ts"
   },
   "author": "",
   "license": "ISC",
