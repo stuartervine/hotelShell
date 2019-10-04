@@ -13,9 +13,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/isabelcooper/BorisBikesJS/issues"
+    "url": "https://github.com/isabelcooper/hotelShellSample/issues"
   },
-  "homepage": "https://github.com/isabelcooper/BorisBikesJS#readme",
+  "homepage": "https://github.com/isabelcooper/hotelShellSample#readme",
   "dependencies": {
     "@types/chai": "^4.2.1",
     "@types/mocha": "^5.2.7",

@@ -22,6 +22,9 @@ describe("Hotel", () => {
 
   describe("Handling checkin", () => {
     it ('should check in a new guest', () => {
+      const name = Random.string();
+      hotel.checkInGuest(guest);
+      expect(hotel.guests).to.eql([{name}]);
       hotel.checkInGuest(guest);
       expect(hotel.guests).to.eql([guest]);
     });
