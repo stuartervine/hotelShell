@@ -1,13 +1,18 @@
-export class Hotel {
-  private rooms: string[];
+const EMPTY_ROOM = null;
 
-  constructor(numberOfRooms: number) {
-    this.rooms = Array(numberOfRooms).fill('')
+export class Hotel {
+  private guests: string[] = [];
+
+  constructor(private numberOfRooms: number) {
   }
 
-  public checkInGuest(_guest: { name: string }){
-    if(this.rooms.length === 0) {
+  public checkInGuest(guest: { name: string }){
+    if(this.guests.length === this.numberOfRooms) {
       throw new Error("No room at the inn")
     }
+    if(this.guests.includes(guest.name)) {
+      throw new Error("You've already checked in dummy!")
+    }
+    this.guests.push(guest.name)
   }
 }

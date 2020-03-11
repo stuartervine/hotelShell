@@ -19,4 +19,17 @@ describe("Hotel", () => {
     }
   });
 
+  it('should only allow a guest to check into one room', () => {
+    const hotel = new Hotel(3);
+    try {
+      const guest = {name: Random.string()};
+      hotel.checkInGuest(guest);
+      hotel.checkInGuest(guest);
+      expect(false, "should throw exception").to.eql(true)
+    } catch (e) {
+      expect(e.message).to.eql("You've already checked in dummy!");
+    }
+
+  })
+
 });
