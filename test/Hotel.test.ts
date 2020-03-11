@@ -29,7 +29,15 @@ describe("Hotel", () => {
     } catch (e) {
       expect(e.message).to.eql("You've already checked in dummy!");
     }
+  });
 
+  it('should allow a checked in guest to check out and allow a different guest to check in', () => {
+    const hotel = new Hotel(1);
+      const guest1 = {name: Random.string()};
+      const guest2 = {name: Random.string()};
+      hotel.checkInGuest(guest1);
+      hotel.checkOutGuest(guest1);
+      hotel.checkInGuest(guest2);
   })
 
 });

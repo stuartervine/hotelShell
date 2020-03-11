@@ -15,7 +15,7 @@ To get started, try running `npm run test`.
 
 #### Check out
 - A checked in guest should be able to check out and the room become available again.
-- A bill should be presented to the guest on check out.
+- A bill should be presented to the guest on check out, each night costs $100.
 
 #### Complaints
 - If a guest complains about a room, they are allocated a new room while their existing room is broken.

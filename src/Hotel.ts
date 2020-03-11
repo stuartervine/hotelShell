@@ -1,4 +1,4 @@
-const EMPTY_ROOM = null;
+type Guest = { name: string };
 
 export class Hotel {
   private guests: string[] = [];
@@ -6,7 +6,7 @@ export class Hotel {
   constructor(private numberOfRooms: number) {
   }
 
-  public checkInGuest(guest: { name: string }){
+  public checkInGuest(guest: Guest){
     if(this.guests.length === this.numberOfRooms) {
       throw new Error("No room at the inn")
     }
@@ -14,5 +14,9 @@ export class Hotel {
       throw new Error("You've already checked in dummy!")
     }
     this.guests.push(guest.name)
+  }
+
+  public checkOutGuest(guest: Guest) {
+    this.guests = this.guests.filter(name => name !== guest.name)
   }
 }
