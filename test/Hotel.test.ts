@@ -1,6 +1,7 @@
 import {expect} from 'chai';
 import {Random} from "../utils/Random";
 import {Hotel} from "../src/Hotel";
+import {ControllableClock} from "../src/Clock";
 
 describe("Hotel", () => {
 
@@ -33,11 +34,23 @@ describe("Hotel", () => {
 
   it('should allow a checked in guest to check out and allow a different guest to check in', () => {
     const hotel = new Hotel(1);
-      const guest1 = {name: Random.string()};
-      const guest2 = {name: Random.string()};
-      hotel.checkInGuest(guest1);
-      hotel.checkOutGuest(guest1);
-      hotel.checkInGuest(guest2);
-  })
+    const guest1 = {name: Random.string()};
+    const guest2 = {name: Random.string()};
+    hotel.checkInGuest(guest1);
+    hotel.checkOutGuest(guest1);
+    hotel.checkInGuest(guest2);
+  });
+
+  it('should return a bill on checkout to the guest', () => {
+    const lengthOfStay = Random.integer(5)+1;
+    const clock = new ControllableClock();
+    const hotel = new Hotel(1, clock);
+    const guest1 = {name: Random.string()};
+    hotel.checkInGuest(guest1);
+
+    clock.moveForward(lengthOfStay);
+    const bill = hotel.checkOutGuest(guest1);
+    expect(bill.amount).to.eql(lengthOfStay*100);
+  });
 
 });
