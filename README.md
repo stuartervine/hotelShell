@@ -1,37 +1,32 @@
-# Happy Hotel 
+# McDonalds Hotel 
 
 To get started, try running `npm run test`. 
 
 ### Hotel Rules: 
 - No extensions can be made to the hotel or its component parts without first implementing a failing test
-- The hotel is not responsible for keeping guest or restaurant data
+- ~~The hotel is not responsible for keeping guest or restaurant data~~ <- this attempts to drive the implementation and that's not a good thing.
 
 ### Features to add: 
 
-#### Checking In 
-- [ ] Confirm a stay for tonight and update the hotel
-- [ ] Don't forget about your first guest when another checks in
-- [ ] Allow multiple guests to check in at once
-- [ ] Don't allow the same guest to check in more than once (throw an error?)
-- [ ] Don't allow a guest to check in if there are no free rooms
-- [ ] BONUS: Consider refactoring your 'checkIn' function 
+#### Checking In
+- A named guest should be able to check in to a hotel with available rooms.
+- A hotel cannot check in more guests than there are rooms.
+- A guest can only check into one room.
 
 #### Check out
-- [ ] On checking out a guest, update the hotel system to record the free room
-- [ ] Request payment from the guest on checkout
+- A checked in guest should be able to check out and the room become available again.
+- A bill should be presented to the guest on check out.
 
-#### Guests
-- [ ] Store guests' names and dietary requirements eg vegetarian, nut allergy etc. 
-- [ ] Guests should know which hotel they're checked in at at any given time.
-
-#### Rooms
-- [ ] Record when a guest complains about a room - the room cannot be used while it is broken
-- [ ] Send a builder to fix the broken room 
+#### Complaints
+- If a guest complains about a room, they are allocated a new room while their existing room is broken.
+- If a room is broken it cannot be allocated to a new guest.
+- A room is fixed when a builder is sent to their room.
 
 #### Restaurant
-- [ ] Print a restaurant menu 
-- [ ] Select a menu for a guest, but don't give them anything they're allergic to
-- [ ] Update checkout to include the restaurant bill
+- A guest can order a hamburger from the restaurant for $5, this should be added to their final bill.
+- A guest can order a veggie burger from the restaurant for $6 (green tax), this should be added to their bill.
+- A vegetarian guest cannot order a hamburger.
 
 #### More hotels
-- [ ] Add another hotel to the chain. A guest cannot be staying in more than one hotel on any given night. 
+- The hotels expands to a chain of two hotels: McDonalds and BurgerKing hotel:
+  - A guest cannot check in to two hotels at the same time.

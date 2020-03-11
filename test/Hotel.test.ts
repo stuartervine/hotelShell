@@ -3,19 +3,20 @@ import {Random} from "../utils/Random";
 import {Hotel} from "../src/Hotel";
 
 describe("Hotel", () => {
-  let hotel;
 
-  beforeEach(() => {
-    hotel = new Hotel(100);
+  it('should be able to check in a new guest when there are available rooms', () => {
+    const hotel = new Hotel(1);
+    hotel.checkInGuest({name: Random.string()});
   });
 
-  it ('should be created with no guests', () => {
-    expect(hotel.guests).to.eql([])
+  it('should not be able check in a new guest when there are no available rooms', () => {
+    const hotel = new Hotel(0);
+    try {
+      hotel.checkInGuest({name: Random.string()});
+      expect(false, "should throw exception").to.eql(true)
+    } catch (e) {
+      expect(e.message).to.eql("No room at the inn");
+    }
   });
 
-  it ('should check in a new guest', () => {
-    const name = Random.string();
-    hotel.checkInGuest({name});
-    expect(hotel.guests).to.eql([{name}]);
-    });
 });

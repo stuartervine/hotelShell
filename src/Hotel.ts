@@ -1,9 +1,13 @@
 export class Hotel {
-  public guests: any[] = [];
+  private rooms: string[];
 
-  constructor(_rooms: number) {}
+  constructor(numberOfRooms: number) {
+    this.rooms = Array(numberOfRooms).fill('')
+  }
 
-  public checkInGuest(guest: { name: string }){
-    console.log("check in guest here!")
+  public checkInGuest(_guest: { name: string }){
+    if(this.rooms.length === 0) {
+      throw new Error("No room at the inn")
+    }
   }
 }
